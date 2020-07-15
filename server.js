@@ -1,21 +1,7 @@
 const http = require('http')
 const app = require('./backend/app');
-// const socketIO = require('socket.io');
 const path = require("path")
-
 const express = require('express');
-
-
-const normalizePort = value => {
-    var port = parseInt(value, 10);
-    if (isNaN(port)) {
-        return value
-    }
-    if (port >= 0) {
-        return port
-    }
-    return false;
-}
 
 const onError = error => {
     if (error.syscall !== "listen") {
@@ -41,9 +27,6 @@ const onListening = () => {
     const addr = server.address();
     const bind = typeof addr === "string" ? "pipe " + addr : "port " + port;
 }
-
-
-// const port = normalizePort(process.env.Port || 5000)
 
 var port = process.env.PORT || 5000;
 

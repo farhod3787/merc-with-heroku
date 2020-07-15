@@ -115,13 +115,12 @@ router.post('/paycom', async function(request, response) {
       }
     };
 
-    // const paycom_password = 'W57OmRPUTmPXGgmZ@ZGOTrkxTzaO%q@KywKx';
-    const paycom_password = 'nX12IGqdptWDNk7CWV2mcIF9zwCwG9S4JnI9';
+    const paycom_password = 'nX12IGqdptWDNk7CWV2mcIF9zwCwG9S4JnI9';    // Web kassa key
     const username = 'Paycom';
 
     // parse login and password from headers
-    // const b64auth = (request.headers.authorization || '').split(' ')[1] || '';
-    // const [login, password] = new Buffer(b64auth, 'base64').toString().split(':');
+    const b64auth = (request.headers.authorization || '').split(' ')[1] || '';
+    const [login, password] = new Buffer(b64auth, 'base64').toString().split(':');
     const login = request.body.login;
     const password = request.body.password;
 
@@ -135,16 +134,10 @@ router.post('/paycom', async function(request, response) {
         response.status(200).json(res);
     }
     const id = request.body.id;
-    // const transaction_id = request.body.params.id;
-    // const amount = Math.floor(request.body.params.amount / 100);
-    // const order_id = (request.body.params.account !== undefined) ? request.body.params.account.order_id : null;
-    // const time = request.body.params.time;
-
-    const transaction_id = '123321123321';
-    const amount = Math.floor(request.body.amount / 100);
-    const order_id = (request.body.account !== undefined) ? request.body.order_id : null;
-    const time = new Date()
-
+    const transaction_id = request.body.params.id;
+    const amount = Math.floor(request.body.params.amount / 100);
+    const order_id = (request.body.params.account !== undefined) ? request.body.params.account.order_id : null;
+    const time = request.body.params.time;
     let transaction = {};
     let order;
 
@@ -186,9 +179,8 @@ router.post('/paycom', async function(request, response) {
         case "CreateTransaction":
             await Transaction.findOne({paycom_id: transaction_id }).then(obj => {
               transaction = obj;
-              // console.log(transaction);
             }).catch(async err => {
-              // console.log(err);
+              console.log(err);
             });
            await Order.findById(order_id).then( async obj => {
             order = obj;
@@ -236,7 +228,7 @@ router.post('/paycom', async function(request, response) {
                 };
                 response.status(200).json(res);
               }).catch( err =>{
-                // console.log(err);
+                console.log(err);
               });
             } else {
               if(transaction.order_id !== order_id){

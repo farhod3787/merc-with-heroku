@@ -14,20 +14,14 @@ const newsRouter = require('./routes/news');
 const video_newRouter = require('./routes/video-news');
 const paymentsRouter = require('./routes/payments')
 
+const config = require('./config/config');
 
 const cors = require("cors");
 const app = express();
 
 app.use(cors());
 
-
-// mongoose.connect('mongodb+srv://farhod:7Q8SfcHx.F2J.HG@cluster0-uf7cc.mongodb.net/mercedec?retryWrites=true', { useNewUrlParser: true })
-//     .then(() => {
-//         console.log('MongoDB connected.');
-//     })
-//     .catch(err => console.log(err));
-
-mongoose.connect("mongodb://localhost:27017/mercedec").then( () => {
+mongoose.connect(config.database).then( () => {
     console.log('Connected to database')
 })
 .catch( () =>{
@@ -35,19 +29,12 @@ mongoose.connect("mongodb://localhost:27017/mercedec").then( () => {
  });
 
 
-
 module.exports = { mongoose };
 
 
-// app.use(express.bodyParser());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-// app.use('/', express.static(path.join(__dirname, '../dist/online-pharmacy')))
-
 app.use('/images', express.static(path.join("backend/images")));
-// app.use('/recipe', express.static(path.join("backend/recipe")));
-
-
 app.use((req, res, next) => {
     res.setHeader("Access-Control-Allow-Origin", "*");
     res.setHeader(
