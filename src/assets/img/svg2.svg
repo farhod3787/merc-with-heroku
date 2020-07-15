@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="72" height="73" viewBox="0 0 72 73">
+  <defs>
+    <clipPath id="clip-path">
+      <path id="Path_3895" data-name="Path 3895" d="M0,0H37V37H0Z" fill="#ff4e00"/>
+    </clipPath>
+  </defs>
+  <g id="Group_731" data-name="Group 731" transform="translate(-225 -1316)">
+    <g id="Group_213" data-name="Group 213" transform="translate(224.679 1315.838)">
+      <g id="Ellipse_7" data-name="Ellipse 7" transform="translate(0.321 0.162)" fill="none" stroke="#ff4e00" stroke-width="3">
+        <ellipse cx="36" cy="36.5" rx="36" ry="36.5" stroke="none"/>
+        <ellipse cx="36" cy="36.5" rx="34.5" ry="35" fill="none"/>
+      </g>
+    </g>
+    <g id="baseline-touch_app-24px" transform="translate(243 1334)" clip-path="url(#clip-path)">
+      <path id="Path_3894" data-name="Path 3894" d="M11.3,15.7V9.938a3.854,3.854,0,1,1,7.708,0V15.7a6.938,6.938,0,1,0-7.708,0Zm15.17,7.138-7-3.484a2.171,2.171,0,0,0-.833-.17H17.469V9.938a2.313,2.313,0,0,0-4.625,0V26.495l-5.288-1.11a2.694,2.694,0,0,0-.37-.046,1.725,1.725,0,0,0-1.218.509L4.75,27.081,12.366,34.7A2.321,2.321,0,0,0,14,35.375H24.468a2.246,2.246,0,0,0,2.22-1.973l1.156-8.125a2.216,2.216,0,0,0-1.372-2.436Z" transform="translate(2.573 1.625)" fill="#ff4e00"/>
+    </g>
+  </g>
+</svg>

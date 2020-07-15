@@ -1,0 +1,204 @@
+<section class=" history_wrap wrapper w-100 pt-0">
+    <div class="container-fluid px-lg-5">
+        <div class="wrap_confirmation">
+            <div class="row py-4 ">
+                <!-- <div class="col-12 wrapper_about text-center m-auto "    >
+
+                  <a href="#"  >ГлавнаяМода и аксессуарыСумкиДля неё</a>
+                    </div> -->
+
+                    <div class="col-lg-1">
+                    </div>
+                <div class="col-lg-10  mb-4  text-center" >
+                    <div class=" ">
+                        <div class="row	">
+                            <div class="col-md-5 text-left">
+                                <div class=" ">
+                                  <div class = "bikini-product-container">
+                                    <div class = "bikini-grid1">
+                                      <div class = "bikini-img-container">
+                                        <img id ="bikini-display1" src="{{product.image_original_name}}">
+                                        <img id ="bikini-display2" src="{{product.image_original_name}}">
+                                        <img id ="bikini-display3" src="{{product.image_original_name}}">
+                                        <img id ="bikini-display4" src="{{product.image_original_name}}">
+                                      </div>
+
+                                      <div class="bikini-thumbnail">
+                                        <img id="clickMe1" class ="bikini-thumbnails" src="{{product.image_original_name}}">
+                                        <img id="clickMe2" class ="bikini-thumbnails" src="{{product.image_original_name}}">
+                                        <img id="clickMe3" class ="bikini-thumbnails" src="{{product.image_original_name}}">
+                                        <img id="clickMe4" class ="bikini-thumbnails" src="{{product.image_original_name}}">
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                            </div>
+                            <div class="col-md-7 text-left   ">
+                                <div class="h6 text-dark font-weight-bold">{{product.name_ru}}</div>
+                                <p>Скидка при заказе: {{product.sale}} %  за каждые 1 314,30 сум. </p>
+
+                                <p class="my-2" style="font-weight: 500;">{{product.sale}} %  Купон нового пользователя</p>
+                                <!-- <p class="mb-2" style="font-weight: 500;">Скидка 394,29 сум. за каждые 4 271,48 сум.</p> -->
+                                <!-- <button class=" btn butoncard my-3">131,43 сум. Купон  </button>
+                                <button class=" btn butoncard m-3">Скидка 394,29 сум.  </button> -->
+                                <p class="mb-2" style="font-weight: 500;"> <span class="font-weight-bold h5">{{product.price}} сум.</span></p>
+                                <!-- <button class="butoncarda  ">Получить купоны</button> -->
+                                  <div class="my-3 card-connect">
+                                    <!-- <div >Количество:</div>
+
+                                    <mat-form-field>
+                                      <mat-label>State</mat-label>
+                                      <mat-select #rate (selectionChange) = 'select(rate.value, product.price)'>
+                                        <mat-option>None</mat-option>
+                                        <mat-option *ngFor="let state of quantity" [value]="state">{{state}}</mat-option>
+                                      </mat-select>
+                                    </mat-form-field> -->
+
+                                    <!-- <div>
+                                      <button class="button-disconnect">-</button>
+                                      <span class="p-3 h4">11</span>
+                                      <button class="button-disconnect">+</button>
+                                      <span>4735 шт. в наличии</span>
+                                    </div> -->
+                                  </div>
+
+                                <div class="">Выберите страну отправки товара</div>
+                                <!-- <button  (click) = 'buy(product._id)' class="ennis">Купит сейчас</button> -->
+                                <button (click) = 'addBasket(product._id)' class=" butoncard m-3">Добавить в корзину</button>
+                            </div>
+                        </div>
+                        <hr>
+                    </div>
+                </div>
+
+                <div class="col-lg-1">
+                </div>
+
+                <!-- <div class="col-lg-3  productmobile-none text-center">
+                    <div  class="product-image-wrap product-wrap-mobile text-center mb-3" style="max-width: 300px;display: inline-block;"   >
+                        <div class="product-like">
+                          <div class="d-inline-block float-left">
+                            <button class="fa fa-star aktive-star"></button>
+                            <button class="fa fa-star aktive-star"></button>
+                            <button class="fa fa-star aktive-star"></button>
+                            <button class="fa fa-star-o"></button>
+                            <button class="fa fa-star-o"></button>
+                          </div>
+                          <div class="d-inline-block float-right">
+                            <button class="fa fa-heart aktive"></button>
+                          </div>
+                        </div>
+                        <a  routerLink="/about-product">
+                          <div class="p-2">
+                            <img   src="assets/images/Img/8.png"    alt="">
+                            <p class="pl-1" >Ходовая часть</p>
+                            <div class="text-left product-price pl-1    text-dark " >25,000,000 сум</div>
+                          </div>
+                        </a>
+                        <div class="shopping-button"  >
+                          <button   class="button_price   w-100" > <span class="fa fa-shopping-cart"></span> Добавить в корзину</button>
+                        </div>
+                      </div>
+
+
+                </div> -->
+
+                  <div class="col-12">
+                              <table class="table table-striped">
+                                  <tbody>
+                                      <tr>
+                                          <th scope="row">1</th>
+                                          <td>Модель кузова	 </td>
+                                          <td>{{product.model}}</td>
+                                      </tr>
+                                      <tr>
+                                          <th scope="row">2</th>
+                                          <td>Марка	</td>
+                                          <td>{{product.brand}}</td>
+                                      </tr>
+                                      <tr>
+                                          <th scope="row">3</th>
+                                          <td>Модель</td>
+                                          <td>  MERCEDES BENZ</td>
+                                      </tr>			<tr>
+                                          <th scope="row">4</th>
+                                          <td>Страна	</td>
+                                          <td>  MB E-CLASS</td>
+                                      </tr>			<tr>
+                                          <th scope="row">5</th>
+                                          <td>Бренд	  </td>
+                                          <td>    ТУРЦИЯ</td>
+                                      </tr>			<tr>
+                                          <th scope="row">6</th>
+                                          <td>Артикул бренда</td>
+                                          <td>    FEBI BILSTEIN</td>
+                                      </tr>			<tr>
+                                          <th scope="row">7</th>
+                                          <td>Базовая единица	  </td>
+                                          <td>  36884    Шт</td>
+                                      </tr>
+                                      <tr>
+                                          <th scope="row">8</th>
+                                          <td>Категория на сайте	</td>
+                                          <td>     Подвеска и рулевое </td>
+                                      </tr>			<tr>
+                                          <th scope="row">9</th>
+                                          <td>Кросс коды OEM	  </td>
+                                          <td>{{product.id_number}}</td>
+                                      </tr>
+                                  </tbody>
+                              </table>
+                          </div>
+
+
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<section id="owl-1" >
+    <div class="container-fluid py-3 px-lg-5">
+      <div class="product-tem-card p-2">
+        <div class=" d-inline-block product-price font-weight-bold h5 text-dark  " >ПОПУЛЯРНЫЕ ТОВАРЫ</div>
+        <div class="  product-price float-right  d-inline-block   h5 text-dark  " >Больше   товаров</div>
+      </div>
+    <div class="owl-carousel owl-theme" >
+      <div class="card hoverable" >
+        <div class="card-image waves-effect waves-block waves-light">
+          <div  class="product-image-wrap product-wrap-mobile text-center"   >
+            <div class="product-like">
+              <div class="d-inline-block float-left">
+                <button class="fa fa-star aktive-star"></button>
+                <button class="fa fa-star aktive-star"></button>
+                <button class="fa fa-star aktive-star"></button>
+                <button class="fa fa-star-o"></button>
+                <button class="fa fa-star-o"></button>
+              </div>
+              <div class="d-inline-block float-right">
+                <button class="fa fa-heart aktive"></button>
+              </div>
+            </div>
+            <a  routerLink="/about-product">
+              <div class="p-2">
+                <img   src="assets/images/Img/8.png"    alt="">
+                <p class="pl-1" >Ходовая часть</p>
+                <p class="pl-1" > МСВ12002515845СЫВП</p>
+                <div class="text-left product-price pl-1    text-dark " >25,000,000 сум</div>
+              </div>
+            </a>
+            <div class="shopping-button"  >
+              <button  class="button_price   w-100" > <span class="fa fa-shopping-cart"></span> Добавить в корзину</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+
+
+
+
+
+  </section>

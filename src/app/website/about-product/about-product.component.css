@@ -1,0 +1,262 @@
+
+    /*************Bikini IMG Section on Product Page **********/
+
+#bikini-display2, #bikini-display3, #bikini-display4 {
+  display: none;
+  position: relative;
+  width: 100%;
+}
+
+@media (max-width: 1275px) {
+  #bikini-display2, #bikini-display3, #bikini-display4  {
+    display: none;
+    position: relative;
+    width: 100%;
+  }
+}
+
+@media (max-width: 1150px) {
+  #bikini-display2, #bikini-display3, #bikini-display4  {
+    display: none;
+    position: relative;
+    width: 100%;
+  }
+}
+
+#bikini-display1 {
+  position: relative;
+  width: 100%;
+}
+
+@media (max-width: 1275px) {
+  #bikini-display1  {
+    position: relative;
+    width: 100%;
+  }
+}
+
+@media (max-width: 1150px) {
+  #bikini-display1  {
+    position: relative;
+    width: 100%;
+  }
+}
+
+.bikini-product-container { 
+ 
+  background-color: white;
+ 
+  padding-bottom: 50px;
+  height:auto;
+}
+
+.bikini-grid1 img { 
+  /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
+
+}
+
+.bikini-grid1 {
+  grid-column-start: 0;
+  grid-column-end: 0;
+  position: relative; 
+  display: inline-block;
+ 
+
+}
+
+.bikini-img-container {
+  margin: auto;
+  position: relative;
+  display: inline-block;
+}
+
+.bikini-thumbnail {
+  padding-top: 3px;
+  padding-left: 3px; 
+}
+
+.bikini-thumbnail img {
+  width: 25%;
+  padding:3px 5px;
+}
+
+@media (max-width: 1275px) {
+  .bikini-thumbnail img  {
+    height: 91.68px;
+  }
+}
+
+@media (max-width: 1150px) {
+  .bikini-thumbnail img  {
+    height: 79.456px;
+  }
+}
+
+.bikini-thumbnail img:hover {
+  opacity:0.7;
+  -moz-transform: scale(1.02);
+  -webkit-transform: scale(1.02);
+  transform: scale(1.02);
+  cursor: pointer;
+
+}
+
+
+.thumbnail-clicked {
+  border: 3px solid black;
+}
+
+.card-buton-pro{
+  background-color: #504AFF;
+  color: #fff;
+
+}
+ 
+
+
+.butoncard {
+  position: relative;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  display: inline-block;
+  margin: 0 auto;
+  color: #fff;
+  background-color:#FF7D0C;
+  padding: 11px 20px;
+  border-radius: 5px;
+  overflow: hidden;
+  z-index: 1;
+  border: 0;
+  outline: none;
+  text-align: center;
+}
+
+.butoncard:before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 50px;
+  height: 50px;
+  margin: 0 auto;
+  z-index: -1;
+  border-radius: 50%;
+  transform: translateY(100%);
+  transform-origin: 0% 100%;
+  transition: transform .3s,opacity .3s,background-color .3s,border-radius .3s,width .3s,height .3s;
+  background-color: #FF8D2A
+}
+
+.butoncard:hover:before {
+  opacity: 1;
+  border-radius: 5px;
+  transform: rotate3d(0, 0, 1, 0deg);
+  width: 100%;
+  height: 100%;
+}
+
+ 
+.butoncarda {
+  position: relative;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  display: inline-block;
+  margin: 0 auto;
+  color: #fff;
+  background-color:#4ABDFF;
+  padding: 11px 20px;
+  border-radius: 5px;
+  overflow: hidden;
+  z-index: 1;
+  border: 0;
+  outline: none;
+  text-align: center;
+}
+
+.butoncarda:before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 50px;
+  height: 50px;
+  margin: 0 auto;
+  z-index: -1;
+  border-radius: 50%;
+  transform: translateY(100%);
+  transform-origin: 0% 100%;
+  transition: transform .3s,opacity .3s,background-color .3s,border-radius .3s,width .3s,height .3s;
+  background-color: #61C5FF;
+}
+
+.butoncarda:hover:before {
+  opacity: 1;
+  border-radius: 5px;
+  transform: rotate3d(0, 0, 1, 0deg);
+  width: 100%;
+  height: 100%;
+}
+
+
+
+.button-disconnect{
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 0;
+  font-size: 19px;
+  outline: none;
+  margin: 15px;
+}
+.card-connect input{
+  border: 0;
+  width: 50px;
+  background-color: #fff;
+}
+
+
+ 
+.ennis {
+  position: relative;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  display: inline-block;
+  margin: 0 auto;
+  color: #fff;
+  background-color: #1c57a5;
+  padding: 11px 20px;
+  border-radius: 5px;
+  overflow: hidden;
+  z-index: 1;
+  border: 0;
+  outline: none;
+  text-align: center;
+}
+
+.ennis:before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 50px;
+  height: 50px;
+  margin: 0 auto;
+  z-index: -1;
+  border-radius: 50%;
+  transform: translateY(100%);
+  transform-origin: 0% 100%;
+  transition: transform .3s,opacity .3s,background-color .3s,border-radius .3s,width .3s,height .3s;
+  background-color: #0964dc;
+}
+
+.ennis:hover:before {
+  opacity: 1;
+  border-radius: 5px;
+  transform: rotate3d(0, 0, 1, 0deg);
+  width: 100%;
+  height: 100%;
+}
+ 

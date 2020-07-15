@@ -1,0 +1,98 @@
+<section class=" history_wrap wrapper w-100">
+    <div class="container-fluid px-lg-5">
+        <div class="row px-lg-3 d-flex justify-content-center align-items-center  ">
+            <div class="col-lg-10 wrapper_about text-center  "  >
+                <h2 class="catalog_about_teme px-lg-4">  Контакты <span class="border_bottom"></span></h2>
+                <p class="catalog_about_text  ">Есть много вариантов Lorem Ipsum, но большинство из них имеет не всегда приемлемые модификации, например, юмористические вставки или слова, которые даже отдалённо не напоминают латынь.</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3 col-sm-6">
+                <div class="contact_box text-center">
+                    <div class="contact_box_about">
+                        <div class=" "><span class="fa fa-map-marker color_text"></span></div>
+                        <div class="h4 m-0 py-2">Адрес</div>
+                        <p> Ipsum dolor</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <div class="contact_box text-center">
+                    <div class="contact_box_about">
+                        <div><span class="fa fa-phone color_text"></span></div>
+                        <div class="h4 m-0 py-2">Телефон</div>
+                        <p>+998 000 00 00</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <div class="contact_box text-center">
+                    <div class="contact_box_about">
+                        <div><span class="fa fa-envelope-o color_text"></span></div>
+                        <div class="h4 m-0 py-2">Почта</div>
+                        <p>info@hercules.uz</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <div class="contact_box text-center">
+                    <div class="contact_box_about">
+                        <div><span class="fa fa-envelope-o color_text"></span></div>
+                        <div class="h4 m-0 py-2">Сайт</div>
+                        <p>www.hercules.uz</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="row py-4">
+            <div class="col-9">
+                <div class="contact_wrap_works">
+                    <form class="text-center"   [formGroup]='form' (submit)="onSave()">
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <input type="text" class="form-control form-control-lg" placeholder="Имя *" formControlName="name" id="inputEmail4">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <input type="email" class="form-control form-control-lg" placeholder="E-mail *"   formControlName="email" id="email">
+                            </div>
+
+                        </div>
+                        <div class="form-group">
+                            <input type="text"   prefix="+998 " mask="(00) 000 00 00" class="form-control" placeholder="Enter Phone Number" formControlName="number">
+
+                            <!-- <input type="text" class="form-control form-control-lg"  id="inputAddress" formControlName="number" placeholder="+998901234567"> -->
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control form-control-lg" formControlName="message" id="exampleFormControlTextarea1" rows="5"></textarea>
+                        </div>
+                        <button type="submit" [disabled]="!form.valid" class="btn btn-info py-2 px-5">Отправить</button>
+                    </form>
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="contact_wrap_works">
+                    <div class="h4 relative">ЧАСЫ РАБОТЫ</div>
+                    <p class="py-2">Воскресенье закрыто</p>
+                    <p class="py-2">Понедельник с 9:00 до 21:00</p>
+                    <p class="py-2">Вторник с 9:00 до 21:00</p>
+                    <p class="py-2">Среда с 9:00 до 21:00</p>
+                    <p class="py-2">Четверг с 9:00 до 21:00</p>
+                    <p class="py-2">Воскресенье закрыто</p>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center d-flex align-items-center py-4">
+            <div class="col-lg-10">
+                <p class="text-center">Есть много вариантов Lorem Ipsum, но большинство из них имеет не всегда приемлемые модификации, например, юмористические вставки или слова, которые даже отдалённо не напоминают латынь.</p>
+            </div>
+            <div class="col-12">
+                <div class="map w-100">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d47934.871053551535!2d69.31586475!3d41.332147649999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1suz!2s!4v1580485530152!5m2!1suz!2s"  class="w-100 pt-5" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</section>

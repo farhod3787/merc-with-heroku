@@ -1,0 +1,56 @@
+<div class="row">
+  <div class="col-lg-1">
+  </div>
+
+  <div class="col-lg-10">
+    <mat-spinner *ngIf="!isLoad"></mat-spinner>
+    <form [formGroup]='form' (submit)="onSave()"  *ngIf="isLoad">
+      <div class="row">
+        <div class="col-lg-6">
+          <mat-form-field appearance="outline">
+            <mat-label>Name UZ</mat-label>
+            <input matInput placeholder="Placeholder" formControlName="name_uz">
+          </mat-form-field>
+        </div>
+
+        <div class="col-lg-6">
+          <mat-form-field appearance="outline">
+            <mat-label>Name Ru</mat-label>
+            <input matInput placeholder="Name" formControlName="name_ru">
+          </mat-form-field>
+        </div>
+
+        <div class="col-lg-6">
+          <mat-form-field appearance="outline">
+            <mat-label>Description Uz</mat-label>
+            <textarea matInput placeholder="description_uz" formControlName="description_uz"></textarea>
+          </mat-form-field>
+        </div>
+        <div class="col-lg-6">
+          <mat-form-field appearance="outline">
+            <mat-label>Description Ru</mat-label>
+            <textarea matInput placeholder="description_ru" formControlName="description_ru"></textarea>
+          </mat-form-field>
+        </div>
+
+        <img width="300px" *ngIf = "!imageview" src="{{image}}" [alt]="form.value.image">
+        <div class="col-lg-12">
+          <input type="file" name='image' (change)="onInputChange($event)"> <br>
+          <div class="image-preview" *ngIf="imagePreview !== '' && imagePreview && form.get('image').valid">
+            <br><br><img width="300px" [src]="imagePreview" [alt]="form.value.image"> <br><br><br>
+          </div>
+        </div>
+
+        <br><br>
+        <button type="submit" [disabled]="!form.valid" mat-flat-button color="primary">Add</button>
+
+      </div>
+    </form>
+
+
+  </div>
+
+  <div class="col-lg-1">
+  </div>
+
+</div>

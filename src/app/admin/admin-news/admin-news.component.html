@@ -1,0 +1,92 @@
+<div class="container-fluid">
+  <div class="d-sm-flex align-items-center justify-content-between mb-4">
+    <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
+    <a routerLink="/admin/addNews" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
+      <i class="fas fa-download fa-sm text-white-50"></i> Add new Product</a>
+  </div>
+  <!-- Page Heading -->
+  <p class="mb-4">Bootstrap's default utility classes can be found on the official
+    Bootstrap Documentation
+    page. The custom utilities below were created to extend this theme past the default utility classes built
+    into Bootstrap's framework.
+  </p>
+
+  <!-- Content Row -->
+  <div class="row">
+    <!-- <div class="col-lg-1">
+    </div> -->
+    <!-- Second Column -->
+    <div class="col-lg-12">
+
+      <!-- table -->
+      <mat-form-field>
+        <mat-label> <mat-icon aria-hidden="false" aria-label="Example home icon">search</mat-icon>Filter</mat-label>
+        <input matInput (keyup)="applyFilter($event)" placeholder="Example: John">
+      </mat-form-field>
+      <mat-spinner *ngIf="isLoad"  ></mat-spinner>
+
+      <div class="mat-elevation-z8" *ngIf="!isLoad">
+
+        <table mat-table [dataSource]="dataSource" matSort  >
+
+          <ng-container matColumnDef="id">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
+            <td mat-cell *matCellDef="let row, let i=index"> {{i+1}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="image">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Image </th>
+            <td mat-cell *matCellDef="let row">
+              <a href="{{row.image_original_name}}">
+
+                <img width="100" src="{{row.image_original_name}}" alt="">
+            </a>
+              </td>
+          </ng-container>
+
+          <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
+            <td mat-cell *matCellDef="let row"> {{row.name_uz}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="rating">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Rating </th>
+            <td mat-cell *matCellDef="let row" > {{row.rating}} </td>
+          </ng-container>
+
+            <ng-container matColumnDef="date">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Date </th>
+            <td mat-cell *matCellDef="let row" [style.color]="row.color"> {{row.date}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="edit">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Edit </th>
+            <td mat-cell  *matCellDef="let row">
+              <button mat-stroked-button routerLink = '/admin/updateNews/{{row._id}}' color="primary">Edit</button>
+            </td>
+          </ng-container>
+
+          <ng-container matColumnDef="delete">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Delete </th>
+            <td mat-cell *matCellDef="let row">
+              <button mat-stroked-button color="warn" (click)="delete(row._id)">Delete</button>
+              </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;">
+          </tr>
+        </table>
+
+        <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+      </div>
+
+
+    </div>
+
+    <!-- <div class="col-lg-1">
+    </div> -->
+
+  </div>
+
+</div>

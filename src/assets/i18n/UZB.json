@@ -1,0 +1,45 @@
+﻿
+{
+  "NAVBAR":
+  {
+   "ASOSIY" : "ASOSIY",
+   "SIGN" : "Kirish",
+   "PROFIL": "Mening profilim",
+   "TAQQOSLASH": "Taqqoslash",
+   "SAVAT": "Sotib olish",
+   "REGISTR" : "Ro'yhatdan o'tish",
+   "KAFOLAT": "KAFOLAT VA SERTIFIKATLAR",
+   "NEWS": "Yangiliklar",
+   "TOLOV": "To'lov va Eco-pharma xizmati",
+   "SAVOL-JAVOB": "Savol va javoblar",
+   "CONTACT": "Biz bilan aloqa",
+   "MALUMOT": " Umumiy ma'lumot"
+} ,
+"SIDENAV" :
+{
+  "KATEGORIYA" : "Kategoriya",
+  "Dorilar": "Dorilar",
+  "ONA-BOLA": "Ona va bolalar uchun",
+  "TIBBIY-ASBOBLAR": "Tibbiy asboblar",
+  "OZUQALAR": "Ozuqalar",
+  "GOZALLIK": "Go'zallik va salomatlik",
+  "GIYOHLAR": "Giyohlar va o'tlar",
+  "GIGIYENA": "Gigiyena vositalari",
+  "KATALOG": "Dorilar katalogi"
+},
+"HOME" :
+{
+  "SONI": "so'm  1 dona",
+  "BUTTON": "Savatga qo'shish",
+  "NOL": "Sotuvda qolmadi",
+  "TITLE": "Kategoriya nomi",
+  "OLD": "Hammasi"
+}
+
+
+
+
+
+
+}
+

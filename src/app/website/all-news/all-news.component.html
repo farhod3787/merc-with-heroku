@@ -1,0 +1,37 @@
+<section class="news_about_wrap wrapper w-100">
+    <div class="container-fluid px-lg-5">
+        <div class="row px-lg-3  justify-content-center d-flex align-items-center">
+            <div class="col-lg-10 wrapper_about text-center  "  >
+                <h2 class="news_about_teme px-lg-4"> Новости Mercedes Benz<span class="border_bottom"></span></h2>
+                <p class="news_about_text  ">	Есть много вариантов Lorem Ipsum, но большинство из них имеет не всегда приемлемые модификации, например, юмористические вставки или слова, которые даже отдалённо не напоминают латынь.</p>
+            </div>
+            <div class="col-3 text-center">
+                <a routerLink='/news'> 
+                    <div class="news_box" > 
+                        <div class="h5"><img src="assets/images/SVG/news.svg" class="w-20" alt="">НОВОСТИ</div>
+                    </div>
+                </a> 
+            </div>
+            <div class="col-3 text-center">
+                <a routerLink="popular-news">
+                    <div class="news_box">
+                        <div class="h5"><img src="assets/images/SVG/star.svg" class="w-20" alt="">ПОПУЛЯРНЫЙ</div>
+                    </div>
+                </a>
+ 
+            </div>
+            <div class="col-3 text-center">
+                <a routerLink="video-news">
+                    <div class="news_box">
+                        <div class="h5"><img src="assets/images/SVG/film.svg" class="w-20" alt="">ВИДЕО</div>
+                    </div>
+                </a>
+ 
+            </div>
+            <hr style="width: 100%;padding: 1px;background-color: #4ABDFF;border-radius: 5px;">
+        </div>
+
+  <router-outlet></router-outlet>
+
+    </div>
+</section>

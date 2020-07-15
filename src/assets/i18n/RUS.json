@@ -1,0 +1,19 @@
+﻿
+{
+    "NAVBAR":
+   {
+      "ASOSIY" : "ГЛАВНАЯ",
+      "SIGN" : "Вход",
+      "REGISTR" : "Регистрация",
+      "TRANSACTION": "ОБМЕН",
+      "NEWS": "НОВОСТИ",
+      "COMMENTS": "ОТЗЫВЫ",
+      "DEFINITION": "ТАРИФЫ",
+      "CONTACT": "КОНТАKТЫ",
+      "TEST" : "PREMIUM"
+
+   }
+
+
+  }
+

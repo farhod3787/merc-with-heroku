@@ -1,0 +1,454 @@
+
+
+ <section class="navbar_heder" style="width: 100%; overflow: hidden;position: relative;">
+
+  <div class="header-top">
+	  <div class="container-fluid px-lg-5">
+		<div class="float-right d-inline-block">
+			<ul class="toolbar">
+				<li class="toolbar-item">
+					<a href="#" class="toolbar-link" data-toggle="modal" data-target="#exampleModalphone"  >ЧТО С МОИМ ЗАКАЗОМ</a>
+
+				</li>
+				<li class="toolbar-item">
+					<a href="#" data-toggle="modal" data-target="#exampleModalphonea" class="toolbar-link"><span class="fa fa-phone pr-2"></span> ЗАКАЗАТЬ ОБРАТНУЮ СВЯЗЬ</a>
+				</li>
+				<li class="toolbar-item toolbar-item-language">
+            <app-language></app-language>
+          <!-- <mat-form-field style="width: 50px; ">
+						<mat-select [(value)]="selected">
+						  <mat-option value="option1" class="text-white">UZ</mat-option>
+						  <mat-option value="option2">RU</mat-option>
+						</mat-select>
+					  </mat-form-field> -->
+				</li>
+				<li class="toolbar-item border-0">
+					<a routerLink="/sort-products" class="toolbar-link  border-0">
+						<img src="assets/img/Group.png" style="display: inline-block;" alt="">
+						<span class="toolbar-link-span"  >5</span></a>
+				</li>
+			</ul>
+		</div>
+	  </div>
+  </div>
+
+  <div class="header-middle">
+	<div class="container-fluid px-lg-5">
+	  <div class="row w-100" style="position: relative;">
+		  <div class="d-inline-block" style="position: absolute;left:0;">
+			  <a href="#"> <img src="assets/img/logo.png" class="img-fluid" style="height: 45px;vertical-align: middle;" alt=""> </a>
+		  </div>
+		  <div class="col-12 d-flex align-iteam-center">
+			  <div class="navbar-a">
+				<ul class="navbar_nav">
+					<li class="navbar_nav_item">
+						<a routerLink="/" class="navbar_nav_link">{{'NAVBAR.ASOSIY' | translate}}</a>
+					</li>
+					<li class="navbar_nav_item">
+						<a routerLink="/catalog" class="navbar_nav_link">Каталог</a>
+					</li>
+
+					<li class="navbar_nav_item">
+						<a routerLink="/news" class="navbar_nav_link">Новости</a>
+					</li>
+					<li class="navbar_nav_item">
+						<a routerLink="/about" class="navbar_nav_link">Мир Mercedes-Benz</a>
+					</li>
+
+					<!-- <li class="navbar_nav_item">
+						<a href="#" class="navbar_nav_link">Мир Mercedes-Benz</a>
+					</li> -->
+					<li class="navbar_nav_item">
+						<a routerLink="/contact" class="navbar_nav_link">Контакты</a>
+					</li>
+				</ul>
+			  </div>
+
+		  </div>
+		  <div class=" " style="position: absolute; right: 0;">
+			  <div class="navbar-contacts ">
+				  <span class="navbar-contacts-info">ТЕЛЕФОН ПОДДЕРЖКИ</span>
+				  <span class="navbar-contacts-num ">+998 (91) 999-99-99</span>
+			  </div>
+		  </div>
+
+	  </div>
+	</div>
+</div>
+
+<div class="header-bottom">
+	<div class="container-fluid px-lg-5">
+		<div class="row">
+			<div class="header__bottom-block">
+				<div class="categories btn btn-primary" data-toggle="modal" data-target="#exampleModalLeft">
+					<i class="fa fa-bars categories__chooseicon-left"></i>
+					<span class="categories__item">КАТЕГОРИИ</span>
+					<i class="fa fa-angle-down categories__chooseicon"></i>
+				</div>
+			</div>
+			<div class="header__bottom-wrapper ">
+				<div class="search">
+					<input type="text" class="searchTerm" placeholder="Поиск по сайтам..." >
+					<i class="fa fa-search" style="position: absolute;left: 15px;top: 13px;color: #fff;;"></i>
+					<button type="submit" class="searchButton text-white">
+						Найти
+				   </button>
+				 </div>
+			</div>
+			<div class="header__bottom-block">
+				<div class="cabinet" *ngIf = 'signin'>
+					<a class="cabinet__toggler" href="#" data-toggle="modal" data-target="#exampleModalphoneb">
+						<img src="assets/img/user.png" class="d-inline-block absolute" style="position: absolute;" alt="">
+						<h3  class="cabinet__title"   >Кабинет</h3>
+            <p   class="cabinet__item"   >Войти</p>
+					</a>
+        </div>
+
+        <div class="cabinet" *ngIf = '!signin'>
+					<a class="cabinet__toggler" href="#" data-toggle="modal" data-target="#exampleModalphoneads" class="toolbar-link">
+						<img src="assets/img/user.png" class="d-inline-block absolute" style="position: absolute;" alt="">
+            <p  class="cabinet__item"   >Welcome </p>
+						<h3  class="cabinet__title"   >{{body.userName}}</h3>
+					</a>
+        </div>
+
+				<div class="basket"  *ngIf = 'rate === 0'>
+					<a class="basket__toggler" >
+						<!-- <img src="assets/img/shopping.png" class="d-inline-block absolute" style="position: absolute;" alt=""> -->
+						<mat-icon aria-hidden="false" class="d-inline-block absolute" style="position: absolute;    font-size: 33px;" aria-label="Example add_shopping_cart icon">add_shopping_cart</mat-icon>
+						<h3 class="cabinet__title">Корзина</h3>
+						<p class="cabinet__item js-cart-total">
+							Нет товара
+            </p>
+
+					</a>
+        </div>
+
+        <div class="basket" *ngIf = 'rate != 0'>
+					<a class="basket__toggler" routerLink="/shopping-card">
+						<!-- <img src="assets/img/shopping.png" class="d-inline-block absolute" style="position: absolute;" alt=""> -->
+						<mat-icon aria-hidden="false" class="d-inline-block absolute" style="position: absolute;    font-size: 33px;" aria-label="Example add_shopping_cart icon">add_shopping_cart</mat-icon>
+						<h3 class="cabinet__title">Корзина</h3>
+            <p  class="cabinet__item js-cart-total">
+							{{rate}}
+						</p>
+					</a>
+        </div>
+
+			</div>
+		</div>
+	</div>
+</div>
+  <!-- Modal left -->
+  <div class="modal left fade" id="exampleModalLeft" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabelLeft" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header" style="width: 325px;">
+          <h5 class="modal-title" id="exampleModalLabelLeft">  Все продуктов</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body p-0" >
+         <nav id="navigation">
+          <ul class="p-0">
+			<li class="dropdown" rel="1" *ngFor = 'let category of categories'>
+        <a href="#">
+				<!-- <i class="fa fa-angle-down"></i> -->
+				<span>{{category.name_ru}} </span>
+				<i class="fa fa-angle-right dropdown-icons "  ></i>
+				<ul class="dropdown-2 p-0" >
+          <p *ngFor = 'let subcategory of subcategories'>
+					<li class="dropdown" rel="2" *ngIf='category._id == subcategory.category_id'>
+						<a  routerLink='/select/{{category._id}}/{{subcategory._id}}'><i class="ion-gear-a"></i> <span> {{subcategory.name_ru}}</span> 	</a>
+					  </li></p>
+				</ul>
+ 			</a>
+			</li>
+
+
+              </ul>
+            </nav>
+
+          </div>
+          <!-- <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div> -->
+        </div>
+      </div>
+    </div>
+
+ </section>
+
+<!-- mobile  -->
+
+<section class="mobile-header" style="position: fixed;z-index: 55555;">
+	<div class="container">
+		<div class="row">
+			<div class="col-6 text-white">
+				<a data-toggle="modal" data-target="#exampleModalLeftaa">
+					<span class="fa fa-bars  " style="font-size: 20px;line-height: 25px;padding-top: 3px;;"></span>
+				</a>
+			</div>
+			<div class="col-6 text-right ">
+
+				<a href="#" class="px-2" data-toggle="modal" data-target="#exampleModalRight"> <img src="assets/img/search.png" alt=""> </a>
+				<a href="#" class="px-3" data-toggle="modal" data-target="#exampleModalphoneb"> <img src="assets/img/user.png" alt=""> </a>
+				<a href="#" class="px-2" data-toggle="modal" data-target="#exampleModalRighta"> <img src="assets/img/shopping.png" alt=""> </a>
+			</div>
+
+
+
+		</div>
+	</div>
+
+</section>
+<div class="height"></div>
+  <!-- Modal left -->
+<div class="modal left fade" id="exampleModalLeftaa" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabelLeft" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+	  <div class="modal-content">
+
+		<div class="modal-body pb-0">
+		  <!-- partial:index.partial.html -->
+<div class="page-wrapper chiller-theme toggled">
+	<nav   class="sidebar-wrapper">
+	  <div class="sidebar-content">
+		<div class="sidebar-brand">
+		  <a href="#" class="text-darc">	HERCULES</a>
+		  <div  >
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+				<span aria-hidden="true">&times;</span>
+			  </button>
+		  </div>
+		</div>
+		<div class="sidebar-header  ">
+			<button class="  ">ENG</button>
+			<button class=" ">RU</button>
+			<button class=" ">UZ</button>
+		</div>
+		<!-- sidebar-header  -->
+		<div class="sidebar-search">
+		  <div>
+			<div class="input-group">
+			  <input type="text" class="form-control search-menu" placeholder="Search...">
+			  <div class="input-group-append">
+				<span class="input-group-text">
+				  <i class="fa fa-search" aria-hidden="true"></i>
+				</span>
+			  </div>
+			</div>
+		  </div>
+		</div>
+		<!-- sidebar-search  -->
+		<div class="sidebar-menu">
+		  <ul>
+			<li>
+			  <a href="#">
+				<span>ГЛАВНАЯ</span>
+			  </a>
+			</li>
+			<li>
+			  <a href="#">
+				<span>О НАС</span>
+			  </a>
+			</li>
+			<li>
+			  <a href="#">
+				<span>КАТАЛОГ</span>
+			  </a>
+			</li>
+			<li>
+				<a href="#">
+				  <span>НОВОСТИ</span>
+				</a>
+			  </li>
+			  <li>
+				<a href="#">
+				  <span>КОНТАКТЫ</span>
+				</a>
+			  </li>
+		  </ul>
+		</div>
+		<!-- sidebar-menu  -->
+	  </div>
+
+	</nav>
+
+	<!-- page-content" -->
+  </div>
+		</div>
+		 <!-- body modal -->
+
+	  </div>
+	</div>
+  </div>
+	<!-- end modal  -->
+
+	<!-- Modal right search-->
+<div class="modal right fade" id="exampleModalRight" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+	  <div class="modal-content">
+		<div class="modal-header">
+		  <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+		  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			<span aria-hidden="true">&times;</span>
+		  </button>
+		</div>
+		<div class="modal-body">
+		  ...
+		</div>
+		<div class="modal-footer">
+		  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+		  <button type="button" class="btn btn-primary">Save changes</button>
+		</div>
+	  </div>
+	</div>
+  </div>
+  <!-- end modal  -->
+
+ 	<!-- Modal right shopping-->
+<div class="modal right fade" id="exampleModalRighta" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+	  <div class="modal-content">
+		<div class="modal-header">
+		  <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+		  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			<span aria-hidden="true">&times;</span>
+		  </button>
+		</div>
+		<div class="modal-body ">
+		  ...
+		</div>
+		<div class="modal-footer">
+		  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+		  <button type="button" class="btn btn-primary">Save changes</button>
+		</div>
+	  </div>
+	</div>
+  </div>
+  <!-- end modal  -->
+
+<!-- modal phone -->
+<!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalphoneb"  >Open modal for @mdo</button> -->
+
+<div class="modal fade" id="exampleModalphone" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="padding-right: 0;right: 0;">
+	<div class="modal-dialog" role="document">
+	  <div class="modal-content">
+		<div class="modal-body">
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close" style="position: absolute;right: 0;    right: 25px;
+			border-radius: 50%;
+			z-index: 55;">
+				<span aria-hidden="true">&times;</span>
+			  </button>
+			<div class="login-pagea">
+				<div class="form-as">
+				  <form class="login-forma">
+					<label   style="font-size: 22px;padding-bottom: 15px;">ЧТО С МОИМ ЗАКАЗОМ</label>
+					<input #idNumber type="text" placeholder="Введите ID номер"/>
+					<!-- <input type="number" placeholder="+998 99 999 99 99"/> -->
+					<button (click)='withID(idNumber.value)'>Проверить</button>
+				  </form>
+				</div>
+			  </div>
+		</div>
+	  </div>
+	</div>
+  </div>
+
+<!-- end -->
+
+
+<div class="modal fade" id="exampleModalphonea" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+	  <div class="modal-content">
+		<div class="modal-body">
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close" style="position: absolute;right: 0;    right: 25px;
+			border-radius: 50%;
+			z-index: 55;">
+				<span aria-hidden="true">&times;</span>
+			  </button>
+			<div class="login-pagea"  >
+				<div class="form-as">
+				  <form class="login-forma"  [formGroup]='form' (submit)="onSave()"  >
+					<label for="" style="font-size: 22px;padding-bottom: 15px;">ПЕРЕЗВОНИТЕ МНЕ	</label>
+					<input type="text"  formControlName="name"  placeholder="Имя"/>
+					<input type="text"  formControlName="number"  prefix="+998 " mask="(00) 000 00 00" placeholder="Номер телефона*"/>
+					<textarea type="text"  formControlName="message" placeholder="Хочу спросить"></textarea>
+					<button type='submit' [disabled]="!form.valid">Жду звонка </button>
+				  </form>
+				</div>
+			  </div>
+		</div>
+	  </div>
+	</div>
+  </div>
+ <!-- end -->
+ <div class="modal fade" id="exampleModalphoneads" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+	  <div class="modal-content">
+		<div class="modal-body">
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close" style="position: absolute;right: 0;    right: 25px;
+			border-radius: 50%;
+			z-index: 55;">
+				<span aria-hidden="true">&times;</span>
+			  </button>
+			<div class="login-pagea"  >
+				<div class="form-as   "   >
+          <div class="h4 font-weight-bold">
+            Хотите выйти?</div>
+          <div  class=" d-flex  align-items-center justify-content-center" style="height: 200px; "  >
+            <button class=" w-50" style="background: #DC3545;" type='submit'  (click) = 'logout()' ><span class="fa fa-arrow-left"></span> Выйти </button>
+          </div>
+
+				</div>
+			  </div>
+		</div>
+	  </div>
+	</div>
+  </div>
+  <!-- end -->
+ <div class="modal fade p-0" id="exampleModalphoneb" style="padding: 0;" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+	  <div class="modal-content">
+		<div class="modal-body">
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close" style="position: absolute;right: 0;    right: 25px;
+			border-radius: 50%;
+			z-index: 55;">
+				<span aria-hidden="true">&times;</span>
+			  </button>
+			<div class="login-page">
+				<div class="form">
+				  <form class="register-form reg-form"  [formGroup]='registerUser' (submit)="resgisterNewUser()" >
+					  <label for="" style="font-size: 22px;padding-bottom: 15px;">Регистрация</label>
+					<input type="text"   formControlName="name" placeholder="Name"/>
+					<input type="text"   formControlName="full_name"   placeholder="Full Name"/>
+					<input type="text"   formControlName="email"  placeholder="Email"/>
+					<input type="text"   formControlName="address"  placeholder="Address"/>
+					<input type="text"   formControlName="phone_number"  placeholder="Phone Number"/>
+					<input type="text"  formControlName="login"   placeholder="Login"/>
+					<input type="password"  formControlName="password"   placeholder="Password"/>
+					<button type="submit"   >create</button>
+          </form>
+					<p class="message">Already registered? <a >Sign In</a></p>
+
+				  <form class="login-form reg-form">
+					<label for=""  style="font-size: 22px;padding-bottom: 15px;">Логин	</label>
+					<input type="text" #login placeholder="Имя"/>
+					<input type="password"  #password placeholder="Пароль"/>
+					<button (click)='sign(login.value, password.value)'>Логин</button>
+					<p class="message"> Не зарегистрирован? <a>Завести аккаунт
+					</a></p>
+				  </form>
+				</div>
+			  </div>
+
+
+		</div>
+	  </div>
+	</div>
+  </div>
+<router-outlet></router-outlet>
+
+<app-footer></app-footer>

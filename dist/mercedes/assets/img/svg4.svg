@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="73" height="73" viewBox="0 0 73 73">
+  <g id="Group_732" data-name="Group 732" transform="translate(0.361)">
+    <g id="Ellipse_8" data-name="Ellipse 8" transform="translate(-0.361)" fill="none" stroke="#ff4e00" stroke-width="3">
+      <circle cx="36.5" cy="36.5" r="36.5" stroke="none"/>
+      <circle cx="36.5" cy="36.5" r="35" fill="none"/>
+    </g>
+    <g id="Group_686" data-name="Group 686" transform="translate(-9 0.137)">
+      <g id="baseline-shopping_cart-24px" transform="translate(24.639 28.777)">
+        <path id="Path_479" data-name="Path 479" d="M8.867,22.979A2.622,2.622,0,1,0,11.489,25.6,2.619,2.619,0,0,0,8.867,22.979ZM1,2V4.622H3.622l4.72,9.952-1.77,3.212a2.535,2.535,0,0,0-.328,1.259,2.63,2.63,0,0,0,2.622,2.622H24.6V19.045H9.418a.325.325,0,0,1-.328-.328l.039-.157,1.18-2.137h9.768a2.61,2.61,0,0,0,2.295-1.351l4.694-8.51a1.281,1.281,0,0,0,.157-.629,1.315,1.315,0,0,0-1.311-1.311H6.52L5.288,2H1ZM21.979,22.979A2.622,2.622,0,1,0,24.6,25.6,2.619,2.619,0,0,0,21.979,22.979Z" transform="translate(0.311 0.622)" fill="#ff4e00"/>
+        <path id="Path_480" data-name="Path 480" d="M0,0H31.468V31.468H0Z" fill="none"/>
+      </g>
+      <g id="baseline-keyboard_backspace-24px" transform="translate(45.618 32.71) rotate(-90)">
+        <path id="Path_1419" data-name="Path 1419" d="M0,0H19.847V19.847H0Z" fill="none"/>
+        <path id="Path_1420" data-name="Path 1420" d="M14.885,4.135H3.167l2.96-2.969L4.962,0,0,4.962,4.962,9.923,6.128,8.757,3.167,5.789H14.885Z" transform="translate(2.481 4.962)" fill="#ff4e00"/>
+      </g>
+    </g>
+  </g>
+</svg>

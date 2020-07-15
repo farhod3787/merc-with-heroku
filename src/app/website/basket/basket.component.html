@@ -1,0 +1,92 @@
+<div class="container py-4">
+  <div class="  row">
+    <div class=" col-lg-8   ">
+      <div class="product ux-card row ">
+        <div class="col-8">
+          <div class="h4 text-dark font-weight-bold pb-2">Корзина {{number}}</div>
+        </div>
+      </div>
+
+
+      <div class="product ux-card row " *ngFor = 'let product of products, let i = index'>
+        <div class="col-lg-2 p-0 text-center">
+          <img src="{{product.image_original_name}}" class="img-fluid" style="height: 100px;" alt="">
+        </div>
+        <div class="col-lg-10 ">
+          <div class=" text-dark h6 font-weight-bold ">{{product.name_ru}}</div>
+          <p  class="product-actions">131,43 сум. Купон нового пользователя</p>
+          <p  class="py-2">Скидка при заказе: Скидка 65,72 cум. за каждые 1 314,30 сум.  </p>
+          <p  > <span class="font-weight-bold h4 text-dark">{{product.price}} сум.</span> 11 164,98 сум.   -91%  Для новых пользователей</p>
+          <div  >
+            <!-- <button class="button-disconnect-card">-</button>
+            <span class="  h6">11</span>
+            <button class="button-disconnect-card">+</button> -->
+            <!-- <select class="form-control">
+              <option disabled>Select</option>
+              <option  *ngFor="let state of quantity[i]" >{{state}}</option>
+            </select> -->
+            <mat-form-field>
+              <mat-label>State</mat-label>
+              <mat-select #rate (selectionChange) = 'select(rate.value, product.price)'>
+                <mat-option>None</mat-option>
+                <mat-option *ngFor="let state of quantity[i]" [value]="state">{{state}}</mat-option>
+              </mat-select>
+            </mat-form-field>
+
+          </div>
+        </div>
+        <div class="" style="position: absolute; right: 10px;top: 10px;">
+          <!-- <button class="remove-button"> <mat-icon aria-hidden="false" class="d-inline-block"  aria-label="Example add_shopping_cart icon">favorite_border</mat-icon></button> -->
+          <button class="like-button" (click)='deleteProduct(i)'   ><mat-icon aria-hidden="false" class="d-inline-block"  aria-label="Example add_shopping_cart icon">restore_from_trash</mat-icon></button>
+        </div>
+
+      <!-- <div class="col-12 text-right">
+        <button class=" butoncard btn " style=" background-color: #504AFF;color: #fff;">Заказат у этого прадавца</button>
+    </div> -->
+    </div>
+
+  </div>
+  <div class=" col-lg-4    ">
+  <div class="conard_wrap_works  row m-0 ">
+    <div class="col-12">
+      <div class="h5 text-dark font-weight-bold">Итого:</div>
+    </div>
+    <div class="col-6">
+      <p class="fonts-size18 pb-3">Стоимость</p>
+    </div>
+    <div class="col-6">
+      <p class="fonts-size18 pb-3">    0,00 сум.</p>
+    </div>
+    <div class="col-6">
+      <p class="fonts-size18 pb-3">Скидка:
+      </p>
+    </div>
+    <div class="col-6">
+      <p class="fonts-size18 pb-3">    0,00 сум.</p>
+    </div>
+    <div class="col-6">
+      <p class="fonts-size18 pb-3 ">Всего к оплате:</p>
+    </div>
+    <div class="col-6">
+      <p class="h5 pb-3 font-weight-bold text-dark">{{general_sum}} сум.</p>
+    </div>
+    <div class="col-12" *ngIf = '!isUser'>
+      <button data-toggle="modal" data-target="#exampleModalphoneb"   class="btn text-white w-100 mb-3 card-button-dast" >Iltimos oldin ro'yhatdan o'ting</button>
+    </div>
+    <div class="col-12" *ngIf = 'isUser'>
+      <button (click)='generalSum()' routerLink='/delvery' class="btn text-white w-100 mb-3 card-button-dast" >Оформить заказ</button>
+    </div>
+
+    <div class="col-12">
+      <button (click)='clearBasket()' routerLink='/' class="btn text-white w-100 mb-3 card-button-dast" >Clear Basket</button>
+    </div>
+  </div>
+<!-- modal  -->
+
+
+
+
+  </div>
+</div>
+</div>
+

@@ -1,0 +1,15 @@
+.peyment ol{
+    list-style-type: decimal;
+    padding-left: 40px;
+    font-size: 18px;
+}
+.peyment ol  li , p {
+    padding: 10px 0;
+}
+.peyment ul{
+    padding-left: 40px;font-size: 18px;
+}
+.peyment p{
+    font-size: 18px;
+    line-height: 24px;
+}

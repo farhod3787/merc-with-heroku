@@ -1,0 +1,296 @@
+<!-- 1 -->
+<section class=" history_wrap wrapper w-100">
+    <div class="container-fluid px-lg-5">
+        <div class="wrap_confirmation">
+            <div class="row py-4">
+                <div class="col-12">
+                    <div class="h4 text-left font-weight-bold text-dark  ">ОФОРМЛЕНИЕ ЗАКАЗА</div>
+                </div>
+                <div class="col-lg-9 col-md-8 mb-4   ">
+                    <div class="pb-4">
+                        <p class=" text-left text-dark pb-2">КОНТАКТНАЯ ИНФОРМАЦИЯ</p>
+                        <div class="	conard_wrap_works"  *ngIf = 'isUser'>
+                            <div class="row	" >
+                                <div class="col-12 text-left">
+                                    <form class="needs-validation" novalidate>
+                                        <div class="form-row">
+                                            <div class="col-md-6 mb-4">
+                                                <input type="text" class="form-control " id="validationTooltip01"  placeholder="Имя*" required>
+                                                <div class="valid-tooltip">
+                                                    Looks good!
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 mb-4">
+                                                <input type="text" class="form-control" id="validationTooltip02" placeholder="Фамиля*" required>
+                                                <div class="valid-tooltip">
+                                                    Looks good!
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 mb-4">
+                                                   <input type="text"   prefix="+998 " mask="(00) 000 00 00" class="form-control" placeholder="Enter Phone Number" >
+
+                                              <!-- <input type="text" class="form-control " id="validationTooltip01"  placeholder="998 (_ _) _ _ _ - _ _ - _ _" required> -->
+                                                <div class="valid-tooltip">
+                                                    Looks good!
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 mb-4">
+                                                <input type="text" class="form-control" id="validationTooltip02" placeholder="Электронная почта" required>
+                                                <div class="valid-tooltip">
+                                                    Looks good!
+                                                </div>
+                                            </div >
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pb-4">
+                        <p class="font-weight-bold text-left text-dark pb-2">СПОСОБ ДОСТАВКИ</p>
+                        <div class="row	">
+                            <div class="col-12 text-left">
+                                <form class="was-validated row">
+                                    <div class="custom-control   custom-radio mb-3  col-md-6  " style="padding-left: 1rem;">
+                                        <input (change) = "select_delivery()" type="radio" class="custom-control-input  " id="customControlValidation2" name="radio-stacked" required>
+                                        <label class="custom-control-label wrap_payinfo" for="customControlValidation2">
+                                            <span class="wrap_form_span text-dark"> Доставка на дом или в офис</span>
+                                            <div class="wrap_form_spana">Товар будет доставлен в удобное для Вас место.</div>
+                                        </label>
+                                    </div>
+                                    <div class="custom-control custom-radio mb-3 col-md-6 " style="padding-left: 1rem;">
+                                        <input   (change) = "selected_delivery()" type="radio" class="custom-control-input" id="customControlValidation3" name="radio-stacked" required>
+                                        <label class="custom-control-label wrap_payinfo" for="customControlValidation3">
+                                            <span  class="wrap_form_span text-dark">Самовывоз из Pick-up Point.</span>
+                                            <div class="wrap_form_spana  w-100"> Забрать товар самому из списка Pick-up Point.</div>
+                                        </label>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+
+                        <div *ngIf = '!delivery && !first_delivery' class="	conard_wrap_works">
+                            <div class="row	">
+                                <div class="col-12 text-left">
+                                    <form class="needs-validation" novalidate *ngIf = 'address'>
+                                        <div class="form-row">
+                                            <!-- <div class="col-md-4 mb-4">
+                                                <select class="form-control ">
+                                                    <option disabled>Выберите город</option>
+                                                    <option>Ташкент</option>
+                                                    <option>Ташкентская область</option>
+                                                    <option>Андижанская область</option>
+                                                    <option>Бухарская область</option>
+                                                </select>
+                                            </div> -->
+                                            <!-- <div class="col-md-4 mb-4">
+                                                <select class="form-control ">
+                                                    <option disabled>Выберите район</option>
+                                                    <option>Ташкент</option>
+                                                    <option>Ташкентская область</option>
+                                                    <option>Андижанская область</option>
+                                                    <option>Бухарская область</option>
+                                                </select>
+                                            </div> -->
+                                            <div class="col-md-4 mb-4">
+                                              <input type="text" class="form-control" #province id="validationTooltip02" placeholder="Област" required>
+                                              <div class="valid-tooltip">
+                                                  Looks good!
+                                              </div>
+                                          </div>
+                                          <div class="col-md-4 mb-4">
+                                            <input type="text" class="form-control" #region id="validationTooltip02" placeholder="Город*" required>
+                                            <div class="valid-tooltip">
+                                                Looks good!
+                                            </div>
+                                        </div>
+                                            <div class="col-md-4 mb-4">
+                                                <input type="text" class="form-control" #street id="validationTooltip02" placeholder="Улица*" required>
+                                                <div class="valid-tooltip">
+                                                    Looks good!
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4 mb-4">
+                                                <input type="text" class="form-control" #number_home id="validationTooltip02" placeholder="Номер дома*" required>
+                                                <div class="valid-tooltip">
+                                                    Looks good!
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4 mb-4">
+                                                <input type="text" class="form-control" #floor id="validationTooltip02" placeholder="Этаж" required>
+                                                <div class="valid-tooltip">
+                                                    Looks good!
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4 mb-4">
+                                                <input type="text" class="form-control" #apartment id="validationTooltip02" placeholder="Квартира" required>
+                                                <div class="valid-tooltip">
+                                                    Looks good!
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="mb-4">
+                                          <p> Manzilni tekshirib "Confirm" tugmasini bosing</p>
+                                      </div>
+
+                                      <button class="btn btn-primary" (click) = 'confirm_address(province.value, region.value, street.value, number_home.value, floor.value, apartment.value)' >Confirm</button>
+                                    </form>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div *ngIf = 'delivery  && !first_delivery' class="	conard_wrap_works">
+                          <div class="row	">
+                              <div class="col-12 text-left">
+
+                                  <div class="mb-4">
+                                      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                                           Quaerat laboriosam eius enim, quibusdam in voluptas ullam repudiandae,
+                                          placeat rem totam dicta saepe, libero quo tempora ea ipsum? Itaque, molestias asperiores!</p>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+
+
+
+                    </div>
+                    <div class="pb-4">
+                        <p class="font-weight-bold text-left text-dark pb-2"  >ВЫБЕРИТЕ ПЛАТЕЖНУЮ СИСТЕМУ</p>
+                        <div class="	conard_wrap_works p-0">
+                            <div class="row	">
+                                <div class="col-12 text-left">
+                                    <form class="was-validated ">
+                                        <div class="custom-control custom-radio  d-inline-block  ">
+                                            <input  (change) = "click()" type="radio" class="custom-control-input  " id="customControlValidation5" name="radio-stacked" required>
+                                            <label class="custom-control-label wrap_payinfod" for="customControlValidation5">
+                                                <span class="wrap_form_span text-dark">
+                                                    <img src="assets/images/click.jpeg" style="width: 80px" alt="">  </span>
+                                            </label>
+                                        </div>
+                                        <div class="custom-control custom-radio    d-inline-block ">
+                                            <input (change) = "payme()" type="radio" class="custom-control-input  " id="customControlValidation4" name="radio-stacked" required>
+                                            <label class="custom-control-label wrap_payinfod" for="customControlValidation4">
+                                                <span class="wrap_form_span text-dark">
+                                                    <img src="assets/images/payme.svg" style="width: 80px" alt="">  </span>
+                                            </label>
+                                        </div>
+                                        <div class="custom-control custom-radio    d-inline-block ">
+                                            <input (change) = "cash()" type="radio" class="custom-control-input  " id="customControlValidation6" name="radio-stacked" required>
+                                            <label class="custom-control-label wrap_payinfod" for="customControlValidation6">
+                                                <span class="wrap_form_span text-dark">
+                                                    <img src="assets/images/cash.png" style="width: 80px" alt="">  </span>
+                                            </label>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pb-4">
+                        <p class="font-weight-bold text-left text-dark pb-2">ОСТАВЬТЕ КОММЕНТАРИЙ К ЗАКАЗУ (МАКС.СИМВОЛОВ: 1000)</p>
+                        <div class="	conard_wrap_works">
+                             <div class="row	">
+                                <div class="col-12 text-left">
+                                    <form class="needs-validation" novalidate>
+                                            <div class="form-group">
+                                                <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="«Ориентир, дополнительный номер для контакта с Вами»" rows="3"></textarea>
+                                              </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-lg-3 col-md-4  ">
+                    <div class="	conard_wrap_works">
+                        <div class="h6 text-left font-weight-bold text-dark border-b-2">Состав заказа</div>
+
+                        <div class="row d-flex align-items-center pb-2  dastaw-row  " *ngFor = 'let product of products, let i = index' >
+                            <div class="col-3">
+                                <img src="{{product.image_original_name}}" class="img-fluid" alt="">
+                            </div>
+                            <div class="col-9 text-left">
+                                <p class="dastav-text-size">{{product.name_ru}}</p>
+                                <p class="dastav-text-size">Mercedes W212 36884</p>
+                                <p class="dastav-text-size">{{rates[i]}} x {{product.price}} sum</p>
+                            </div>
+                        </div>
+
+                        <div class="py-3">
+                            <p class="dastav-text-color"> Выбранный способ доставки и оплаты</p>
+
+                            <p class="font-weight-bold py-2">Приемник:</p>
+                            <p  class="dastav-text-color">{{body.userName}}</p>
+                            <p class="font-weight-bold py-2">Доставка:</p>
+                            <p  class="dastav-text-color">{{delivery_text}}</p>
+                            <p class="font-weight-bold py-2">Тип доставки:
+                              <span class="dastav-text-color">{{full_address}}</span>
+                            </p>
+                            <p class="font-weight-bold py-2">Способ оплаты:</p>
+                            <p  class="dastav-text-color">{{pay_type}}</p>
+                        </div>
+                            <div class="row mb-3 dastaw-rowa"  >
+                                <div class="col-6">
+                                    <p class=" h6">Подытог :  </p>
+                                </div>
+                                <div class="col-6">
+                                    <p class="font-weight-bold h6"> {{generalSum}} sum</p>
+                                </div>
+                            </div>
+                            <!-- <form >
+                            <div class="form-group">
+                              <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="gridCheck">
+                                <label class="form-check-label" for="gridCheck">
+                                    <span class="chackbox-text">Нажимая "Оформить заказ", я соглашаюсь с
+                                         <a href="#" class="text-primary">публичным договором оферты</a></span>
+                                    </label>
+                              </div>
+                            </div>
+                          </form> -->
+                          <button   class="btn  w-100 mb-3 card-button-dast text-white"  (click)='createOrder()'  tabindex="0"  >Оформить заказ</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<!-- 3 -->
+
+  <!-- <section class=" history_wrap wrapper w-100">
+    <div class="container-fluid px-lg-5">
+        <div class="wrap_confirmation">
+            <div class="row py-4">
+                <div class="col-lg-9 col-md-8 mb-4  text-center">
+                    <div class="	conard_wrap_works">
+                        <div class="h6 text-center font-weight-bold text-dark">	ДАСТАВКА</div>
+                        <div class="row	">
+                            <div class="col-sm-3 text-left">
+                                <img src="assets/images/Img/kurier.png" class="img-fluid pt-3" alt="">
+                            </div>
+                            <div class="col-sm-9 text-left   ">
+                                <p class="pt-2">Курьер - 0 - sum</p>
+                                <p class="pt-2">Приблизительное время доставки:</p>
+                                <p class="pt-2">27 января 2020</p>
+                            </div>
+                            <div class="col-12 text-left">
+                                <p class="  py-2">Для физических лиц: Стоимость доставки 10 000 сум. Доставка осуществляется по городу Ташкенту в течение одного рабочего дня. При заказе на сумму более 100 000 сум доставка бесплатна.​</p>
+                                <p class="py-2" style="font-style: italic;"><span class="fa fa-clock pr-2" style="font-size: 25px;"></span> Приблизительное время доставки: 27 января 2020</p>
+                                <div class="h5 py-2 text-dark">Желаемое время доставки</div>
+                            </div>
+                        </div>
+                        <hr>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>  -->

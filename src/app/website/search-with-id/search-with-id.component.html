@@ -1,0 +1,47 @@
+<section class="catalog_about_us wrapper w-100">
+  <div class="container-fluid px-lg-5">
+
+      <hr>
+
+<div class="container-fluid py-3 px-lg-5">
+<div class="product-tem-card p-2">
+  <div class=" d-inline-block product-price font-weight-bold h5 text-dark  " >ПОПУЛЯРНЫЕ ТОВАРЫ</div>
+  <div class="  product-price float-right  d-inline-block   h5 text-dark  " >Больше   товаров</div>
+</div>
+<div class="row">
+
+
+    <div class="col-md-3 mb-4" *ngFor='let product of products'>
+      <div class="product-image-wrap product-wrap-mobile text-center"   >
+          <div class="product-like">
+            <div class="d-inline-block float-left">
+              <button class="fa fa-star aktive-star"></button>
+              <button class="fa fa-star aktive-star"></button>
+              <button class="fa fa-star aktive-star"></button>
+              <button class="fa fa-star-o"></button>
+              <button class="fa fa-star-o"></button>
+            </div>
+            <div class="d-inline-block float-right">
+              <button class="fa fa-heart aktive"></button>
+            </div>
+          </div>
+          <a href="">
+            <div class="p-2">
+              <img   src="{{product.image_original_name}}" width='300px'    alt="">
+              <p  class=" pl-1" >{{product.name_ru}}</p>
+              <!-- <p   class=" pl-1"  *ngIf='language'>{{product.name_uz}}</p> -->
+              <div class="text-left product-price  pl-1   text-dark " >{{product.price}} сум</div>
+            </div>
+
+          </a>
+          <div class="shopping-button"  >
+            <button class="button_price   w-100" > <span class="fa fa-shopping-cart"></span> Добавить в корзину</button>
+          </div>
+        </div>
+    </div>  <!-- col -->
+
+</div>
+</div>
+
+  </div>
+</section>
