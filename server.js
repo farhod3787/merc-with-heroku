@@ -37,7 +37,8 @@ const server = http.createServer(app);
 server.on("error", onError);
 server.on("listening", onListening);
 
-app.use(express.static(path.join(__dirname, '/dist/mercedes')))
+app.use(express.static(path.join(__dirname, '/dist/mercedes')));
+
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, '/dist/mercedes', 'index.html'))
 })
