@@ -63,3 +63,7 @@ module.exports = router;
   <input type="hidden" name="card_type" value="{{card_type}}"/>                     karta turi, uzcard yoki humo
   <button type="submit" class="btn btn-success"><i></i>Оплатить через CLICK</button>
 </form> */}
+
+//  Click billinga prodactiondan keyin quidagi URL lar yozib qo'yiladi
+//  http://hercules.uz/api/clickuz/prepare    for prepare URL
+//  http://hercules.uz/api/clickuz/complete    for complete URL

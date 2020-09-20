@@ -58,6 +58,7 @@ app.use('/api/order/', orderRouter);
 app.use('/api/news/', newsRouter);
 app.use('/api/video-news/', video_newRouter);
 app.use('/api/payments/', paymentsRouter);
+app.use('/api/clickuz/', require('./routes/clickuz'));
 
 
 
