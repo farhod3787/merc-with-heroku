@@ -48,91 +48,124 @@ router.get('/test', async function(request, response) {
 });
 
 router.post('/paycom', async function(request, response) {
-    //ERRORS
-    let errors = {
-      '31001': {
-        code: -31001,
-        message: {
-          ru: 'Неверная сумма',
-          uz: 'Неверная сумма',
-          en: 'Неверная сумма'
-        },
-        data: null
+  let merchantKey = Buffer.from("Paycom:5f77e3a44e196c50465b0442").toString('base64');
+
+  //ERRORS
+  let errors = {
+    '31001': {
+      code: -31001,
+      message: {
+        ru: 'Неверная сумма',
+        uz: 'Неверная сумма',
+        en: 'Неверная сумма'
       },
-      '31003': {
-        code: -31003,
-        message: {
-          ru: 'Транзакция не найдена',
-          uz: 'Транзакция не найдена',
-          en: 'Транзакция не найдена'
-        },
-        data: null
+      data: null
       },
-      '31007': {
-        code: -31007,
-        message: {
-          ru: 'Невозможно отменить транзакцию, заказ выполнен',
-          uz: 'Невозможно отменить транзакцию, заказ выполнен',
-          en: 'Невозможно отменить транзакцию, заказ выполнен'
-        },
-        data: null
+    '31003': {
+      code: -31003,
+      message: {
+        ru: 'Транзакция не найдена',
+        uz: 'Транзакция не найдена',
+        en: 'Транзакция не найдена'
       },
-      '31008': {
-        code: -31008,
-        message: {
-          ru: 'Невозможно выполнить данную операцию',
-          uz: 'Невозможно выполнить данную операцию',
-          en: 'Невозможно выполнить данную операцию'
-        },
-        data: null
+      data: null
+    },
+    '31007': {
+      code: -31007,
+      message: {
+        ru: 'Невозможно отменить транзакцию, заказ выполнен',
+        uz: 'Невозможно отменить транзакцию, заказ выполнен',
+        en: 'Невозможно отменить транзакцию, заказ выполнен'
       },
-      '31050': {
-        code: -31050,
-        message: {
-          ru: 'Заказ не найден',
-          uz: 'Заказ не найден',
-          en: 'Заказ не найден'
-        },
-        data: 'order_id'
+      data: null
+    },
+    '31008': {
+      code: -31008,
+      message: {
+        ru: 'Невозможно выполнить данную операцию',
+        uz: 'Невозможно выполнить данную операцию',
+        en: 'Невозможно выполнить данную операцию'
       },
-      '31099': {
-        code: -31099,
-        message: {
-          ru: 'Заказ уже оплачен или в ожидании платежа',
-          uz: 'Заказ уже оплачен или в ожидании платежа',
-          en: 'Заказ уже оплачен или в ожидании платежа'
-        },
-        data: 'order_id'
+      data: null
+    },
+    '31050': {
+      code: -31050,
+      message: {
+        ru: 'Заказ не найден',
+        uz: 'Заказ не найден',
+        en: 'Заказ не найден'
       },
-      '32504': {
-        code: -32504,
-        message: {
-          ru: 'Неправильный пароль',
-          uz: 'Неправильный пароль',
-          en: 'Неправильный пароль'
-        },
-        data: null
+      data: 'order_id'
+    },
+    '31099': {
+      code: -31099,
+      message: {
+        ru: 'Заказ уже оплачен или в ожидании платежа',
+        uz: 'Заказ уже оплачен или в ожидании платежа',
+        en: 'Заказ уже оплачен или в ожидании платежа'
+      },
+      data: 'order_id'
+    },
+    '32504': {
+      code: -32504,
+      message: {
+        ru: 'Неправильный пароль',
+        uz: 'Неправильный пароль',
+        en: 'Неправильный пароль'
+      },
+      data: null
       }
     };
+    // const paycom_password = 'nX12IGqdptWDNk7CWV2mcIF9zwCwG9S4JnI9';    // Web kassa key
+    // const username = 'Paycom';
 
-    const paycom_password = 'nX12IGqdptWDNk7CWV2mcIF9zwCwG9S4JnI9';    // Web kassa key
-    const username = 'Paycom';
+    // // parse login and password from headers
+    // const b64auth = (request.headers.authorization || '').split(' ')[1] || '';
+    // const [login, password] = new Buffer(b64auth, 'base64').toString().split(':');
+    // const login = request.body.login;
+    // const password = request.body.password;
 
-    // parse login and password from headers
-    const b64auth = (request.headers.authorization || '').split(' ')[1] || '';
-    const [login, password] = new Buffer(b64auth, 'base64').toString().split(':');
-    const login = request.body.login;
-    const password = request.body.password;
+    // // Verify login and password are set and correct
+    // if (!(login && password && login === username && password === paycom_password)) {
+    //     let res = {
+    //         'error': errors['32504'],
+    //         'result': null,
+    //         'id': request.body.id
+    //     };
+    //     response.status(200).json(res);
+    // }
 
     // Verify login and password are set and correct
-    if (!(login && password && login === username && password === paycom_password)) {
-        let res = {
-            'error': errors['32504'],
-            'result': null,
-            'id': request.body.id
-        };
-        response.status(200).json(res);
+    if(!request.header("Authorization")){
+      return response.status(200).send({
+        "error": {
+          "code": -32504,
+          "message": {
+            "ru" : "Неверняя авторизация",
+            "uz" : "Noto'g'ri avtorizatsiya",
+            "en" : "Wrong Authorization"
+          },
+          "data": "Authorization"
+        },
+        "id": request.body.id
+      });
     }
+
+    if(request.header("Authorization").substr(6) !== merchantKey){
+      return response.status(200).send({
+        "error": {
+          "code": -32504,
+          "message": {
+            "ru" : "Неверняя авторизация",
+            "uz" : "Noto'g'ri avtorizatsiya",
+            "en" : "Wrong Authorization"
+          },
+          "data": "Authorization"
+        },
+        "id": request.body.id
+      });
+    }
+
     const id = request.body.id;
     const transaction_id = request.body.params.id;
     const amount = Math.floor(request.body.params.amount / 100);
@@ -141,41 +174,38 @@ router.post('/paycom', async function(request, response) {
     let transaction = {};
     let order;
 
-    switch (request.body.method)
-    {
-        case "CheckPerformTransaction":
-            await Order.findById(order_id).then( async obj => {
-              order = obj;
-            }).catch( err => {
-              console.log(err);
-              let res = {
-                'error': errors['31050'],
-                'result': null,
-                'id': id
-              };
-              response.status(200).json(res);
-            });
+    switch (request.body.method){
+      case "CheckPerformTransaction":
+        await Order.findById(order_id).then( async obj => {
+          order = obj;
+        }).catch( err => {
+          console.log(err);
+          let res = {
+            'error': errors['31050'],
+            'result': null,
+            'id': id
+          };
+          response.status(200).json(res);
+        });
 
-            //check amount
-            if( amount !== order.rate ) {
-              let res = {
-                'error': errors['31001'],
-                'result': null,
-                'id': id
-              };
-              response.status(200).json(res);
-            } else {
-              let res = {
-                'error': null,
-                'result': {
-                  'allow': true
-                },
-                'id': id
-              };
-              response.status(200).json(res);
-            }
-            break;
-
+        //check amount
+        if( amount !== order.rate ) {
+          let res = {
+            'error': errors['31001'],
+            'result': null,
+            'id': id
+          };
+          response.status(200).json(res);
+        } else {
+          let res = {
+            'error': null,
+            'result': {
+              'allow': true
+            },
+            'id': id
+          };
+          response.status(200).json(res);
+        }
         case "CreateTransaction":
             await Transaction.findOne({paycom_id: transaction_id }).then(obj => {
               transaction = obj;
@@ -275,7 +305,6 @@ router.post('/paycom', async function(request, response) {
                 response.status(200).json(res);
               }
             }
-            break;
         case "PerformTransaction":
             await Transaction.findOne({paycom_id: transaction_id }).then(obj => {
               transaction = obj;
