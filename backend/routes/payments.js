@@ -653,4 +653,12 @@ router.post('/click', async function(request, response) {
   }
 });
 
+// // Frontendga quidagi formani joylashtirish kerak
+// <form method="POST" action="https://test.paycom.uz">
+//   <input type="hidden" name="merchant" value="5f77e3a44e196c50465b0442"/>       // Kassa Identifikatori
+//   <input type="hidden" name="amount" value="{сумма чека в ТИИНАХ}"/>            // Zakazni narxi
+//   <input type="hidden" name="account[order_id]" value="{field_value}"/>     // Zakazni ID raqami
+//   <button type="submit">Оплатить с помощью <b>Payme</b></button>
+// </form>
+
 module.exports = router;
